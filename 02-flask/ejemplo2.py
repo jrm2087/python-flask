@@ -21,5 +21,10 @@ def colores():
     return render_template('colores.html', colores=colores)
 
 
+@app.route('/frase/<texto>')
+def frase(texto):
+    return render_template('frase.html', tipo=texto)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

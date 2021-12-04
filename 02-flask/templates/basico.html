@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+
+<div>
+    <a href="{{ url_for('pagina1') }}"> Página 1 </a>
+    <br>
+    <a href="{{ url_for('pagina2') }}"> Página 2 </a>
+    <br>
+    <a href="{{ url_for('static',filename='perfil.jpeg') }}">Perfil</a>
+    <br>
+    <a href="{{ url_for('formulario') }}">Formulario</a>
+    <br>
+    <a href="{{ url_for('nombre') }}">Validar</a>
+</div>
+<br>
+<hr>
+<br>
+
+{% block contenido %}
+
+
+{% endblock %}
+
+<br>
+<hr>
+<br>
+
+<h5>Pie de página</h5>
+
+</body>
+</html>
