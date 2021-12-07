@@ -1,0 +1,13 @@
+{% if enviado %}
+<p>Hola {{ nombre }}, buenos días.</p>
+{% else %}
+<p>Introduce nombre en el formulario</p>
+{% endif %}
+
+<form method="post">
+    {{ formulario.hidden_tag() }}
+    {{ formulario.nombre.label}} {{ formulario.nombre }}
+    {{ formulario.enviar }}
+</form>
+
+
