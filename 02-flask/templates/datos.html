@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos</title>
+</head>
+<body>
+
+<h3>Introduzca los datos</h3>
+
+<form method="post">
+    {{ formulario.hidden_tag() }}
+    {{ formulario.nombre.label }} {{ formulario.nombre }}
+    <br/>
+    {{ formulario.edad.label }} {{ formulario.edad }}
+    <br/>
+    {{ formulario.sexo.label }} {{ formulario.sexo }}
+    <br/>
+    {{ formulario.color.label }} {{ formulario.color }}
+    <br/>
+    Comentario {{ formulario.comentario}}
+    <br/>
+    {{ formulario.boton}}
+</form>
+
+</body>
+</html>

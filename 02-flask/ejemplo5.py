@@ -1,6 +1,6 @@
 from flask import Flask, render_template, session, redirect, url_for
 from flask_wtf import FlaskForm
-from wtforms import (StringField, BooleanField,  # DataTimeField,
+from wtforms import (StringField, BooleanField, DateTimeField,
                      RadioField, SelectField, TextAreaField,
                      SubmitField)  # TextField,
 
@@ -21,7 +21,7 @@ class Formulario(FlaskForm):
 
 @app.route('/informacion')
 def informacion():
-    render_template('informacion.html')
+    return render_template('informacion.html')
 
 
 @app.route('/datos', methods=['GET', 'POST'])
@@ -34,7 +34,6 @@ def datos():
         session['color'] = formulario.color.data
         session['comentario'] = formulario.comentario.data
         return redirect(url_for('informacion'))
-
     return render_template('datos.html', formulario=formulario)
 
 
