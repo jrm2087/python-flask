@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo
 from wtforms import ValidationError
-from modelos import Usuario
+from proyectoLogin.modelos import Usuario
 
 
 class FormularioRegistro(FlaskForm):
@@ -11,7 +11,7 @@ class FormularioRegistro(FlaskForm):
     password = PasswordField('Password',
                              validators=[DataRequired(), EqualTo('password_repetir', message='Contraseñas diferentes')])
     password_repetir = PasswordField('Repetir Password', validators=[DataRequired()])
-    boton = StringField('Registrar')
+    boton = SubmitField('Registrar')
 
     def verificar_mail(self, parametro):
         if Usuario.query.filter_by(email=parametro.data).first():
@@ -25,4 +25,4 @@ class FormularioRegistro(FlaskForm):
 class FormularioLogin(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    boton = StringField('Entrar')
+    boton = SubmitField('Entrar')

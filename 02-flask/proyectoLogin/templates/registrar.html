@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block contenido %}
+<form method="post">
+    {{ formulario.hidden_tag() }}
+    {{ formulario.email.label }} {{ formulario.email }}
+    {{ formulario.nombre.label }} {{ formulario.nombre }}
+    {{ formulario.password.label }} {{ formulario.password }}
+    {{ formulario.password_repetir.label }} {{ formulario.password_repetir }}
+    {{ formulario.boton }}
+</form>
+{% endblock %}
